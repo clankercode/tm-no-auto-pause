@@ -32,7 +32,9 @@ const string ActivateSetz_New  = "90 90 90";
 
 const uint64 RVA_IsIconicCall = 0x455591;
 const string IsIconicCall_Orig = "FF 15 E0 34 6A 01";
-const string IsIconicCall_New  = "31 C0 90 90 90 90";
+// stdcall IsIconic(HWND) pops the arg. xor-only left HWND on the stack and
+// crashed on WM_SIZE (window resize). POP EAX; XOR EAX,EAX; 3-NOP.
+const string IsIconicCall_New  = "58 31 C0 90 90 90";
 
 // WinMain: always take the focused branch (CMP [inactive],0 ...)
 const uint64 RVA_WinMain1 = 0x454F57;

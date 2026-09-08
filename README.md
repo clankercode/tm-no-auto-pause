@@ -39,6 +39,8 @@ No Auto-Pause: pause started focus=no Now=1032155
 
 Turbo's WndProc writes unfocused flags; WinMain then SleepEx's and `App_NotifyWindowFocus(0)` pauses the app. This plugin patches those sites at load. Details: Openplanet research note `turbo/2026-09-08-Turbo-Unfocus-Pause.md` (sibling `openplanet/research` repo).
 
+v0.1.3: the WM_SIZE `IsIconic` stub now pops the HWND (stdcall). v0.1.1–0.1.2 left it on the stack and crashed on resize.
+
 ## Build
 
 ```
