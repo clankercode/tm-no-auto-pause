@@ -1,0 +1,9 @@
+[meta]
+name     = "No Auto-Pause"
+author   = "XertroV"
+category = "Utilities"
+version  = "0.1.2"
+
+[script]
+#__DEFINES__
+timeout = 5000
